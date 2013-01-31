@@ -1,0 +1,10 @@
+%%% -*- mode: erlang -*-
+{application, druna_plugin,
+ [
+  {description, "Druna plugin for rebar"},
+  {vsn, "0.5.0"},
+  {applications, [kernel,
+                  stdlib,
+		  inets,
+		  ssl]}
+ ]}.
