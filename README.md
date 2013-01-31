@@ -24,3 +24,26 @@ Druna is able to:
 Druna isn't able to:
 
 * "Publish" dependencies
+
+## Configuration
+
+Deps are downloaded using the following keys in the `rebar.config` file:
+
+First, include the plugin:
+
+``` erlang
+{plugins, [druna_plugin]}.
+```
+
+Then define which deps to get:
+
+``` erlang
+{druna, [
+	 {servers, [{server_name, [{url, "http_server_url"},
+				   {username, "username"},
+				   {password, "password"}]}
+	 	   ]},
+	 {deps, [{app_name, [{vsn, "vsn"}, {server, server_name}]}
+		]}
+	]}.
+```
